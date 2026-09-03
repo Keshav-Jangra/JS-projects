@@ -5,42 +5,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memory Card Game</title>
-
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
-<body class="min-h-screen flex items-center justify-center bg-blue-400">
-    <div id="game" class="w-100 border-2 rounded-xl p-6 bg-gray-400">
-        <h1 class="text-4xl text-red-900 text-center mb-2">Memory Game</h1>
-        <div class="flex justify-between text-lg ">
-            <p class="text-2xl mb-2">Moves</p>
-            <p id="moves">0</p>
-            <p class="text-2xl mb-2">Time</p>
-            <p id="time">0s</p>
+<body class="min-h-screen flex items-center justify-center bg-blue-400 p-4">
+    <div class="flex gap-4 w-full max-w-5xl">
+        <div class="w-1/2 h-[650px] border-2 rounded-xl p-4 bg-gray-300">
+            <h1 class="text-2xl text-red-900 text-center mb-3">Recent Games</h1>
+            <div id="history-list" class="h-[580px] overflow-y-auto pr-2"></div>
         </div>
-
-        <p class="text-2xl mb-2">Best Time</p>
-        <p class="text-2xl mb-2"></p>
-
-        <div id="cards" class="grid grid-cols-4 gap-2"></div>
-        <div>
-            <h1 class="text-2xl mt-2">Game Statistics</h1>
-            <p>Total games:</p>
-            <p id="total-games"></p>
-            <p>Total Wins:</p>
-            <p id="total-wins"></p>
-            <p>Best Time:</p>
-            <p id="best-time"></p>
-            <p>Lowest Moves:</p>
-            <p id="lowest-moves"></p>
+        <div id="game" class="w-1/2 h-[650px] border-2 rounded-xl p-6 bg-gray-300 overflow-y-auto">
+            <h1 class="text-4xl text-red-900 text-center mb-3">Memory Game</h1>
+            <div class="flex justify-between text-lg">
+                <p class="text-xl">Moves</p>
+                <p id="moves">0</p>
+                <p class="text-xl">Time</p>
+                <p id="time">0s</p>
+            </div>
+            <div class="flex justify-between mt-3 mb-3">
+                <p class="text-xl">Best Time</p>
+                <p id="current-best-time">0s</p>
+            </div>
+            <div id="cards" class="grid grid-cols-4 gap-2"></div>
+            <div class="mt-4">
+                <h1 class="text-2xl">Game Statistics</h1>
+                <p>Total games:</p>
+                <p id="total-games"></p>
+                <p>Total Wins:</p>
+                <p id="total-wins"></p>
+                <p>Best Time:</p>
+                <p id="best-time"></p>
+                <p>Lowest Moves:</p>
+                <p id="lowest-moves"></p>
+            </div>
+            <button id="reset"
+                class="flex justify-center mx-auto bg-blue-600 text-white rounded-lg border-2 border-black mt-4 px-4 py-1">New
+                Game</button>
         </div>
-
-        <button id="reset"
-            class="flex justify-center mx-auto text-white rounded-lg border-2 border-black mt-4">Reset</button>
-
     </div>
-    <script src="memoryCards.js"></script>
-
+    <script src="index.js"></script>
 </body>
 
 </html>
